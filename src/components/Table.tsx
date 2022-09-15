@@ -28,11 +28,7 @@ export class Table extends Component implements ITable{
                 <TableHeader/>
                 {this.users.map(user => <TableRow
                     key={user.id}
-                    id={user.id}
-                    name={user.name}
-                    username={user.username}
-                    email={user.email}
-                    address={user.address} />)}
+                    user={user} />)}
             </div>
         )
     }
