@@ -1,13 +1,17 @@
 import React from 'react';
 import {IUser} from "../types/user";
 
-const TableRow = (user:IUser) => {
+type TProps = {
+    user: IUser
+}
+const TableRow = ({ user }: TProps) => {
+    const {  name, username, email, address } = user
     return (
         <div className="row" style={{backgroundColor: user.id % 2 == 0 ? "#E5E5E5" : "#F0F0F0"}}>
-            <div className="name">{user.name}</div>
-            <div className="userName">{user.username}</div>
-            <div className="email">{user.email}</div>
-            <div className="address">{user.address}</div>
+            <div className="name">{name}</div>
+            <div className="userName">{username}</div>
+            <div className="email">{email}</div>
+            <div className="address">{address}</div>
         </div>
     );
 };
