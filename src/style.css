@@ -1,0 +1,38 @@
+.tableHead, .row {
+    display: flex;
+    flex: 1;
+    margin-block: 0px;
+    width: 100%;
+    border-bottom-style: solid;
+    padding: 10px 20px;
+}
+
+.tableHead {
+    background-color: #393B38;
+    padding: 20px;
+}
+
+.headerName, .headerUserName, .headerEmail, .headerAddress, .headerPosts {
+    color: #FFFFFF;
+    font-size: 22px;
+}
+
+.name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress {
+    width: 16.5%;
+    word-break:break-all;
+}
+
+.posts, .headerPosts {
+    padding-inline-start: 0px;
+    width: 34%;
+    word-break:break-all;
+    margin-left: 20px;
+}
+
+.ulPosts {
+    padding-left: 20px;
+}
+
+body {
+    margin: 0px;
+}
