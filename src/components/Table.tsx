@@ -18,9 +18,9 @@ const Table = () => {
     }, [users])
 
     const addUsers = (usersData: any) => {
-        for(let field in usersData) {
-            const { id, name, username, email } = usersData[field]
-            const { street, suite, city, zipcode } = usersData[field].address
+        usersData.forEach((user: any) => {
+            const { id, name, username, email } = user
+            const { street, suite, city, zipcode } = user.address
             const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
             setUsers( (prev) => ([ ...prev, {
@@ -29,7 +29,7 @@ const Table = () => {
                 username,
                 email,
                 address} as IUser ]) )
-        }
+        })
     }
 
     return (
