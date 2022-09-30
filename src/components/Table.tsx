@@ -1,62 +1,45 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {IUser} from "../types/user";
-import {IPosts} from "../types/posts";
-import {ITable} from "../types/table";
-import users from '../data/users.json'
+import usersData from '../data/users.json'
 
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
-export class Table extends Component implements ITable{
-    users: IUser[];
-    posts: IPosts[];
 
-    constructor(props: any) {
-        super(props);
+const Table = () => {
+    const [users, setUsers] = useState([] as IUser[])
 
-        this.users = [];
-        this.posts = [];
-    }
+    useEffect(() => {
+        addUsers(usersData);
+    }, [])
 
-    tableInit = () => {
-        this.addUsers(users);
-    }
+    useEffect(() => {
+        console.log(users)
+    }, [users])
 
-    tablePrint = () => {
-        return(
-            <div id="table" className="table">
-                <TableHeader/>
-                {this.users.map(user => <TableRow
-                    key={user.id}
-                    user={user} />)}
-            </div>
-        )
-    }
+    const addUsers = (usersData: any) => {
+        for(let field in usersData) {
+            const { id, name, username, email } = usersData[field]
+            const { street, suite, city, zipcode } = usersData[field].address
+            const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
-    addUsers = (users: any) => {
-        for(let field in users) {
-            const { id, name, username, email } = users[field]
-
-            const address = users[field].address.street + ", " + users[field].address.suite + ", " +
-                users[field].address.city + ", " + users[field].address.zipcode;
-
-            this.users.push ({
+            setUsers( (prev) => ([ ...prev, {
                 id,
                 name,
                 username,
                 email,
-                address
-            } as IUser);
+                address} as IUser ]) )
         }
     }
 
-    render = () => {
-        this.tableInit();
-
-        return (
-            this.tablePrint()
-        )
-    }
-}
+    return (
+        <div id="table" className="table">
+            <TableHeader/>
+            {users.map(user => <TableRow
+                key={user.id}
+                user={user} />)}
+        </div>
+    );
+};
 
 export default Table;
