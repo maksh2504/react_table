@@ -1,10 +1,9 @@
-import React, {Component, useEffect, useState} from 'react';
-import {IUser} from "../types/user";
-import usersData from '../data/users.json'
+import React, {useEffect, useState} from 'react';
+import {IUser} from "../../types/user";
+import usersData from '../../data/users.json'
 
-import TableHeader from "./TableHeader";
-import TableRow from "./TableRow";
-
+import Header from "./components/Header";
+import Row from "./components/Row";
 
 const Table = () => {
     const [users, setUsers] = useState([] as IUser[])
@@ -19,23 +18,21 @@ const Table = () => {
 
     const addUsers = (usersData: any) => {
         usersData.forEach((user: any) => {
-            const { id, name, username, email } = user
             const { street, suite, city, zipcode } = user.address
             const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
-            setUsers( (prev) => ([ ...prev, {
-                id,
-                name,
-                username,
-                email,
-                address} as IUser ]) )
+            const newUser = {
+                ...user, addressSting: address
+            }
+
+            setUsers( (prev) => ([ ...prev, newUser]) )
         })
     }
 
     return (
         <div id="table" className="table">
-            <TableHeader/>
-            {users.map(user => <TableRow
+            <Header/>
+            {users.map(user => <Row
                 key={user.id}
                 user={user} />)}
         </div>

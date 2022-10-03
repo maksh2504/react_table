@@ -1,11 +1,11 @@
 import React from 'react';
-import {IPosts} from "../types/posts";
+import {IPosts} from "../../../../types/posts";
 
 type TProps = {
     post: IPosts
 }
 
-const PrintPost = ({post}: TProps) => {
+const Post = ({post}: TProps) => {
     return (
         <ul>
             <li>{post.title}</li>
@@ -13,4 +13,4 @@ const PrintPost = ({post}: TProps) => {
     );
 };
 
-export default PrintPost;
+export default Post;

@@ -1,21 +1,25 @@
 import React from 'react';
-import {IUser} from "../types/user";
-import TablePosts from "./TablePosts";
+import {IUser} from "../../../types/user";
+import Posts from "./Posts/Posts";
 
 type TProps = {
     user: IUser
 }
-const TableRow = ({ user }: TProps) => {
-    const { id, name, username, email, address } = user
+
+const Row = ({ user }: TProps) => {
+    const { id, name, username, email, addressString } = user
+    const { street, suite, city, zipcode } = user.address
+    const address = street + ", " + suite + ", " + city + ", " + zipcode;
+
     return (
         <div className="row" style={{backgroundColor: user.id % 2 == 0 ? "#E5E5E5" : "#F0F0F0"}}>
             <div className="name">{name}</div>
             <div className="userName">{username}</div>
             <div className="email">{email}</div>
             <div className="address">{address}</div>
-            <TablePosts userId={id} />
+            <Posts userId={id}/>
         </div>
     );
 };
 
-export default TableRow;
+export default Row;

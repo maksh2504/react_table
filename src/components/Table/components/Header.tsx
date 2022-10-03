@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableHeader = () => {
+const Header = () => {
     return (
         <div className="tableHead">
             <div className="headerName">NAME</div>
@@ -11,4 +11,4 @@ const TableHeader = () => {
     );
 };
 
-export default TableHeader;
+export default Header;
