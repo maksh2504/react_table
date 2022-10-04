@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {IPosts} from "../../../../types/posts";
 import Post from "./Post";
-import axios from "axios";
+import {getPosts} from "../../../../featchers/table";
 
 type TProps = {
     userId: number;
@@ -12,24 +12,14 @@ const Posts = ({userId}: TProps) => {
     const [posts, setPosts] = useState([] as IPosts[])
 
     useEffect(() => {
-        getPosts()
+        getPosts(userId).then(
+            posts => setPosts(posts.data)
+        )
     }, [])
 
     // useEffect(() => {
     //     console.log(posts)
     // }, [posts])
-
-    const getPosts = async () => {
-        const posts = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}/posts/`)
-        console.log(posts.data)
-        setPosts(posts.data)
-    }
-
-    // const addPosts = (postsData: any) => {
-    //     postsData.forEach((post: any) => {
-    //         setPosts( (prev) => ([ ...prev, post]) )
-    //     })
-    // }
 
     return (
         <div>
