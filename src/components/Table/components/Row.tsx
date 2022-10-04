@@ -12,7 +12,7 @@ const Row = ({ user }: TProps) => {
     const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
     return (
-        <div className="row" style={{backgroundColor: user.id % 2 == 0 ? "#E5E5E5" : "#F0F0F0"}}>
+        <div className="row" style={{backgroundColor: id % 2 == 0 ? "#E5E5E5" : "#F0F0F0"}}>
             <div className="name">{name}</div>
             <div className="userName">{username}</div>
             <div className="email">{email}</div>

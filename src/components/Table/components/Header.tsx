@@ -7,6 +7,7 @@ const Header = () => {
             <div className="headerUserName">USER NAME</div>
             <div className="headerEmail">EMAIL</div>
             <div className="headerAddress">ADDRESS</div>
+            <div className="headerPosts">POSTS</div>
         </div>
     );
 };
