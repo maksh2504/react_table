@@ -9,7 +9,7 @@ const Table = () => {
 
     useEffect(() => {
         getUsers().then(
-            users => setUsers(users.data)
+            users => setUsers(users)
         )
     }, [])
 

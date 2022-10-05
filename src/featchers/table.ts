@@ -1,13 +1,7 @@
-import axios from "axios";
+import {baseTableUrl} from "../api/axiosconfig";
+import {IUser} from "../types/user";
+import {IPosts} from "../types/posts";
 
-const BASE_URL = 'https://jsonplaceholder.typicode.com'
+export const getUsers = () => baseTableUrl.get<IUser[]>('/users/').then(({data}) => data)
 
-export const getUsers = () => {
-    const users = axios.get(`${BASE_URL}/users`);
-    return users;
-}
-
-export const getPosts = (userId: number) => {
-    const posts = axios.get(`${BASE_URL}/users/${userId}/posts/`);
-    return posts;
-}
+export const getPosts = (userId: number) => baseTableUrl.get<IPosts[]>(`/users/${userId}/posts/`).then(({data}) => data)
