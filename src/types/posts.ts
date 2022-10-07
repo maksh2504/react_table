@@ -4,3 +4,7 @@ export interface IPosts {
     title: string;
     body: string;
 }
+
+export type TPost = {
+    post: IPosts
+}

@@ -1,14 +1,19 @@
 import React from 'react';
-import {IPosts} from "../../../../types/posts";
+import {IPosts, TPost} from "../../../../types/posts";
+import {Link} from "react-router-dom";
 
 type TProps = {
     post: IPosts
 }
 
-const Post = ({post}: TProps) => {
+const Post = ({post}: TPost) => {
     return (
         <ul>
-            <li>{post.title}</li>
+            <li>
+                <Link to={`/post/${post.id}`}>
+                    {post.title}
+                </Link>
+            </li>
         </ul>
     );
 };
