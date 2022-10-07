@@ -1,28 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {IPosts} from "../../types/posts";
 import {getPost} from "../../featchers/post";
+import './SinglePost.css'
+import {useParams} from "react-router-dom";
+import Post from "./components/Post";
+import Comments from "./components/Comments/Comments";
+import './SinglePost.css'
+
 
 type TProps = {
     postId: number;
 }
 
 const SinglePost = ({postId}: TProps) => {
-    const [post, setPost] = useState({} as IPosts)
-
-    useEffect(() => {
-        getPost(postId).then(
-            post => setPost(post)
-        )
-    }, [])
-
-    // useEffect(() => {
-    //     console.log(post)
-    // }, [post])
-
     return (
         <div>
-            <div>{post.title}</div>
-            <div>{post.body}</div>
+            <Post postId={postId}/>
+            <Comments postId={postId}/>
         </div>
     );
 };

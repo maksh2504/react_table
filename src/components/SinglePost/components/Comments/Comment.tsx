@@ -1,5 +1,5 @@
 import React from 'react';
-import {TComment} from "../../../types/comments";
+import {TComment} from "../../../../types/comments";
 
 const Comment = ({comment}: TComment) => {
     return (

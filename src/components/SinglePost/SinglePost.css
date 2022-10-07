@@ -1,0 +1,13 @@
+.singlePost {
+    text-align: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.body {
+    font-size: 17px;
+}

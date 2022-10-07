@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {TPost} from "../../../types/posts";
-import {getComments} from "../../../featchers/post";
+import {TPost} from "../../../../types/posts";
+import {getComments} from "../../../../featchers/post";
 import Comment from "./Comment";
-import {IComments} from "../../../types/comments";
+import {IComments} from "../../../../types/comments";
 
 type TProps = {
     postId: number;
