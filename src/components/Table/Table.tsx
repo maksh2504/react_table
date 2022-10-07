@@ -3,13 +3,14 @@ import {IUser} from "../../types/user";
 import Header from "./components/Header";
 import Row from "./components/Row";
 import {getUsers} from "../../featchers/table";
+import './style.css';
 
 const Table = () => {
     const [users, setUsers] = useState([] as IUser[])
 
     useEffect(() => {
         getUsers().then(
-            users => setUsers(users.data)
+            users => setUsers(users)
         )
     }, [])
 

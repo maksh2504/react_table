@@ -4,12 +4,11 @@
     margin-block: 0px;
     width: 100%;
     border-bottom-style: solid;
-    padding: 10px 20px;
+    padding: 10px 0px;
 }
 
 .tableHead {
     background-color: #393B38;
-    padding: 20px;
 }
 
 .headerName, .headerUserName, .headerEmail, .headerAddress, .headerPosts {
@@ -17,22 +16,28 @@
     font-size: 22px;
 }
 
-.name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress {
+.name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress, .posts, .headerPosts {
     width: 16.5%;
     word-break:break-all;
+    padding: 10px 0px;
 }
 
 .posts, .headerPosts {
     padding-inline-start: 0px;
     width: 34%;
-    word-break:break-all;
-    margin-left: 20px;
+    /*word-break:break-all;*/
 }
 
-.ulPosts {
+ul {
     padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 body {
     margin: 0px;
+}
+
+* {
+    hyphens: auto;
 }

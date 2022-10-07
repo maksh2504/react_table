@@ -13,7 +13,7 @@ const Posts = ({userId}: TProps) => {
 
     useEffect(() => {
         getPosts(userId).then(
-            posts => setPosts(posts.data)
+            posts => setPosts(posts)
         )
     }, [])
 
