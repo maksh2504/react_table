@@ -3,7 +3,7 @@ import {IUser} from "../../types/user";
 import Header from "./components/Header";
 import Row from "./components/Row";
 import {getUsers} from "../../featchers/table";
-import './style.css';
+import './Table.css';
 
 const Table = () => {
     const [users, setUsers] = useState([] as IUser[])
