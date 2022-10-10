@@ -1,0 +1,17 @@
+.postContent {
+    text-align: center;
+}
+
+.postTitle {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.postBody {
+    font-size: 17px;
+    text-align: left;
+}
+
+.postTitle::first-letter, .postBody::first-letter {
+    text-transform: uppercase;
+}

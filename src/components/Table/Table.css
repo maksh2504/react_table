@@ -41,3 +41,7 @@ body {
 * {
     hyphens: auto;
 }
+
+.tableContent {
+    width: 80%;
+}

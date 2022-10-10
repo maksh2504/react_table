@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {getComments} from "../../../../featchers/post";
 import Comment from "./Comment";
 import {IComments} from "../../../../types/comments";
+import './Comments.css'
 
 type TProps = {
     postId: number;
@@ -21,12 +22,15 @@ const Comments = ({postId}: TProps) => {
     // }, [comments])
 
     return (
-        <div>
-            {
-                comments.map(comment => (
-                    <Comment comment={comment} key={comment.id}/>
-                ))
-            }
+        <div className='commentBlock'>
+            <div>COMMENTS:</div>
+            <div className='comments'>
+                {
+                    comments.map(comment => (
+                        <Comment comment={comment} key={comment.id}/>
+                    ))
+                }
+            </div>
         </div>
     );
 };

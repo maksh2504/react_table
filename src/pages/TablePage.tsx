@@ -1,9 +1,10 @@
 import React from 'react';
 import Table from "../components/Table/Table";
+import './TablePage.css'
 
 const TablePage = () => {
     return (
-        <div>
+        <div className='table'>
             <Table/>
         </div>
     );

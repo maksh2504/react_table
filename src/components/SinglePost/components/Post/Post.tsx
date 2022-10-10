@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {IPosts} from "../../../types/posts";
-import {getPost} from "../../../featchers/post";
+import {IPosts} from "../../../../types/posts";
+import {getPost} from "../../../../featchers/post";
+import './Post.css'
 
 type TProps = {
     postId: number;
@@ -20,9 +21,9 @@ const Post = ({postId}: TProps) => {
     // }, [post])
 
     return (
-        <div className='singlePost'>
-            <div className='title'>{post.id}. {post.title}</div>
-            <div className='body'>{post.body}</div>
+        <div className='postContent'>
+            <div className='postTitle'>{post.title}</div>
+            <div className='postBody'>{post.body}</div>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import './SinglePost.css'
-import Post from "./components/Post";
+import './components/Post/Post.css'
+import Post from "./components/Post/Post";
 import Comments from "./components/Comments/Comments";
 import './SinglePost.css'
 
@@ -11,7 +11,7 @@ type TProps = {
 
 const SinglePost = ({postId}: TProps) => {
     return (
-        <div>
+        <div className='singlePost'>
             <Post postId={postId}/>
             <Comments postId={postId}/>
         </div>

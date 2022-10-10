@@ -1,14 +1,14 @@
 import React from 'react';
 import {TComment} from "../../../../types/comments";
+import './Comment.css'
 
 const Comment = ({comment}: TComment) => {
     return (
-        <div>
-            <div>{comment.id}</div>
-            <div>{comment.postId}</div>
-            <div>{comment.name}</div>
-            <div>{comment.email}</div>
-            <div>{comment.body}</div>
+        <div className='comment'>
+            <div className='cName'>{comment.name}</div>
+            {/*<div className='postId'>{comment.postId}</div>*/}
+            <div className='cBody'>{comment.body}</div>
+            <div className='cEmail'>{comment.email}</div>
         </div>
     );
 };
