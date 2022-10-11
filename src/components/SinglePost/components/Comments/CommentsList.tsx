@@ -2,14 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {getComments} from "../../../../featchers/post";
 import Comment from "./Comment";
 import {IComments} from "../../../../types/comments";
-import './Comments.css'
+import './CommentsList.css'
 
 type TProps = {
     postId: number;
 }
 
-//TODO: Rename to CommentsList, remove console.log
-const Comments = ({postId}: TProps) => {
+const CommentsList = ({postId}: TProps) => {
     const [comments, setComments] = useState([] as IComments[])
 
     useEffect(() => {
@@ -17,10 +16,6 @@ const Comments = ({postId}: TProps) => {
             comments => setComments(comments)
         )
     }, [])
-
-    // useEffect(() => {
-    //     console.log(comments)
-    // }, [comments])
 
     return (
         <div className='commentBlock'>
@@ -36,4 +31,4 @@ const Comments = ({postId}: TProps) => {
     );
 };
 
-export default Comments;
+export default CommentsList;

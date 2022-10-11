@@ -6,9 +6,8 @@ type TProps = {
     user: IUser
 }
 
-//TODO: remove addressString value
 const Row = ({ user }: TProps) => {
-    const { id, name, username, email, addressString } = user
+    const { id, name, username, email } = user
     const { street, suite, city, zipcode } = user.address
     const address = street + ", " + suite + ", " + city + ", " + zipcode;
 

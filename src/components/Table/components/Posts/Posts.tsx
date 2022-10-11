@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {IPosts} from "../../../../types/posts";
 import Post from "./Post";
-import {getPosts} from "../../../../featchers/table";
+import {getPosts} from "../../../../featchers/post";
 
 type TProps = {
     userId: number;
 }
 
-//TODO: remove console.log
 const Posts = ({userId}: TProps) => {
 
     const [posts, setPosts] = useState([] as IPosts[])
@@ -17,10 +16,6 @@ const Posts = ({userId}: TProps) => {
             posts => setPosts(posts)
         )
     }, [])
-
-    // useEffect(() => {
-    //     console.log(posts)
-    // }, [posts])
 
     return (
         <div className='posts'>

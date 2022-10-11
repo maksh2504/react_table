@@ -2,10 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {IUser} from "../../types/user";
 import Header from "./components/Header";
 import Row from "./components/Row";
-import {getUsers} from "../../featchers/table";
+import {getUsers} from "../../featchers/user";
 import './Table.css';
 
-//TODO: remove console.log
 const Table = () => {
     const [users, setUsers] = useState([] as IUser[])
 
@@ -14,10 +13,6 @@ const Table = () => {
             users => setUsers(users)
         )
     }, [])
-
-    // useEffect(() => {
-    //     console.log(users)
-    // }, [users])
 
     return (
         <div>

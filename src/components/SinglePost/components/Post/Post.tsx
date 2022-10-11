@@ -7,7 +7,6 @@ type TProps = {
     postId: number;
 }
 
-//TODO: remove console.log
 const Post = ({postId}: TProps) => {
     const [post, setPost] = useState({} as IPosts)
 
@@ -16,10 +15,6 @@ const Post = ({postId}: TProps) => {
             post => setPost(post)
         )
     }, [])
-
-    // useEffect(() => {
-    //     console.log(post)
-    // }, [post])
 
     return (
         <div className='postContent'>

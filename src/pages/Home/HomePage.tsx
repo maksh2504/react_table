@@ -1,14 +1,13 @@
 import React from 'react';
 
-//TODO: <></> is redundant, rename Home to HomePage, create folder
-const Home = () => {
+const HomePage = () => {
     return (
-        <>
+        <div>
             <h1 style={{textAlign: 'center', justifyContent: 'center'}}>
                 Home page.
             </h1>
-        </>
+        </div>
     );
 };
 
-export default Home;
+export default HomePage;
