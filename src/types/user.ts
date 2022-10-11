@@ -23,3 +23,7 @@ export interface IUser {
         bs: string
     }
 }
+
+export type TUser = {
+    user: IUser;
+}

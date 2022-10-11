@@ -13,11 +13,13 @@ const Row = ({ user }: TProps) => {
 
     return (
         <div className="row" style={{backgroundColor: id % 2 == 0 ? "#E5E5E5" : "#F0F0F0"}}>
-            <div className="name">{name}</div>
-            <div className="userName">{username}</div>
-            <div className="email">{email}</div>
-            <div className="address">{address}</div>
-            <Posts userId={id}/>
+            <div className='rowContent'>
+                <div className="name">{name}</div>
+                <div className="userName">{username}</div>
+                <div className="email">{email}</div>
+                <div className="address">{address}</div>
+                <Posts userId={id}/>
+            </div>
         </div>
     );
 };

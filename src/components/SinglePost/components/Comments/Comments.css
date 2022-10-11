@@ -1,0 +1,9 @@
+.comments {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.commentBlock {
+    margin: 40px 0;
+    text-align: left;
+}

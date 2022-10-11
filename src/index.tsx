@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import App from './App';
-import './components/Table/style.css';
+import './components/Table/Table.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

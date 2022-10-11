@@ -1,0 +1,14 @@
+.comment {
+    width: 32%;
+    text-align: left;
+    margin: 20px 0px;
+    padding-right: 10px;
+}
+
+.cName, .cBody, .cEmail {
+    margin-bottom: 10px
+}
+
+.cName {
+    text-transform: uppercase;
+}

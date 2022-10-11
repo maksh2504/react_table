@@ -1,5 +1,6 @@
 .tableHead, .row {
     display: flex;
+    justify-content: center;
     flex: 1;
     margin-block: 0px;
     width: 100%;
@@ -18,14 +19,13 @@
 
 .name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress, .posts, .headerPosts {
     width: 16.5%;
-    word-break:break-all;
     padding: 10px 0px;
 }
 
 .posts, .headerPosts {
     padding-inline-start: 0px;
     width: 34%;
-    /*word-break:break-all;*/
+    padding-left: 20px;
 }
 
 ul {
@@ -40,4 +40,9 @@ body {
 
 * {
     hyphens: auto;
+}
+
+.headerContent, .rowContent {
+    display: flex;
+    width: 80%;
 }
