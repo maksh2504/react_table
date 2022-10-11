@@ -4,7 +4,6 @@ import Post from "./components/Post/Post";
 import Comments from "./components/Comments/Comments";
 import './SinglePost.css'
 
-
 type TProps = {
     postId: number;
 }

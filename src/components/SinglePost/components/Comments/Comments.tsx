@@ -8,6 +8,7 @@ type TProps = {
     postId: number;
 }
 
+//TODO: Rename to CommentsList, remove console.log
 const Comments = ({postId}: TProps) => {
     const [comments, setComments] = useState([] as IComments[])
 

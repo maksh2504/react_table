@@ -1,3 +1,4 @@
+//TODO: extract types
 export interface IUser {
     id: number;
     name: string;

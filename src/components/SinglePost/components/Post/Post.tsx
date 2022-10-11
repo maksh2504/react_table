@@ -7,6 +7,7 @@ type TProps = {
     postId: number;
 }
 
+//TODO: remove console.log
 const Post = ({postId}: TProps) => {
     const [post, setPost] = useState({} as IPosts)
 

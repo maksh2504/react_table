@@ -7,6 +7,7 @@ type TProps = {
     userId: number;
 }
 
+//TODO: remove console.log
 const Posts = ({userId}: TProps) => {
 
     const [posts, setPosts] = useState([] as IPosts[])

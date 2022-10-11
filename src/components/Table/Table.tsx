@@ -5,6 +5,7 @@ import Row from "./components/Row";
 import {getUsers} from "../../featchers/table";
 import './Table.css';
 
+//TODO: remove console.log
 const Table = () => {
     const [users, setUsers] = useState([] as IUser[])
 

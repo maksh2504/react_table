@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import TablePage from "../pages/TablePage";
 import Post from "../pages/Post";
 
+//TODO: remove close tags
 const RoutesMain = () => {
     return (
         <Routes>

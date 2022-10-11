@@ -2,6 +2,7 @@ import React from 'react';
 import {IPosts, TPost} from "../../../../types/posts";
 import {Link} from "react-router-dom";
 
+//TODO: ???
 type TProps = {
     post: IPosts
 }

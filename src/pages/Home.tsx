@@ -1,5 +1,6 @@
 import React from 'react';
 
+//TODO: <></> is redundant, rename Home to HomePage, create folder
 const Home = () => {
     return (
         <>
