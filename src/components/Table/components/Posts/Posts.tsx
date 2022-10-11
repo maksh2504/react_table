@@ -22,12 +22,14 @@ const Posts = ({userId}: TProps) => {
     // }, [posts])
 
     return (
-        <div>
-            {
-                posts.map(post => (
-                    <Post post={post} key={post.id}/>
-                ))
-            }
+        <div className='posts'>
+            <ul>
+                {
+                    posts.map(post => (
+                        <Post post={post} key={post.id}/>
+                    ))
+                }
+            </ul>
         </div>
     );
 };

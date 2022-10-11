@@ -19,14 +19,13 @@
 
 .name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress, .posts, .headerPosts {
     width: 16.5%;
-    word-break:break-all;
     padding: 10px 0px;
 }
 
 .posts, .headerPosts {
     padding-inline-start: 0px;
     width: 34%;
-    /*word-break:break-all;*/
+    padding-left: 20px;
 }
 
 ul {
@@ -42,10 +41,6 @@ body {
 * {
     hyphens: auto;
 }
-
-/*.tableContent {*/
-/*    width: 80%;*/
-/*}*/
 
 .headerContent, .rowContent {
     display: flex;

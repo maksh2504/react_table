@@ -8,13 +8,11 @@ type TProps = {
 
 const Post = ({post}: TPost) => {
     return (
-        <ul>
-            <li>
-                <Link to={`/post/${post.id}`}>
-                    {post.title}
-                </Link>
-            </li>
-        </ul>
+        <li>
+            <Link to={`/post/${post.id}`}>
+                {post.title}
+            </Link>
+        </li>
     );
 };
 
