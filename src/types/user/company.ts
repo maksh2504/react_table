@@ -3,3 +3,7 @@ export interface ICompany {
     catchPhrase: string;
     bs: string;
 }
+
+export type TCompany = {
+    company: ICompany
+}

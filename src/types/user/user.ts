@@ -1,15 +1,15 @@
-import {IAddress} from "./address";
-import {ICompany} from "./company";
+import {TAddress} from "./address";
+import {TCompany} from "./company";
 
 export interface IUser {
     id: number;
     name: string;
     username: string;
     email: string;
-    address: IAddress;
+    address: TAddress;
     phone: string;
     website: string;
-    company: ICompany;
+    company: TCompany;
 }
 
 export type TUser = {
