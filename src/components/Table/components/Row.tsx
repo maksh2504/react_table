@@ -1,14 +1,10 @@
 import React from 'react';
-import {IUser} from "../../../types/user/user";
+import { TUser } from "../../../types/user/user";
 import Posts from "./Posts/Posts";
 
-type TProps = {
-    user: IUser
-}
-
-const Row = ({ user }: TProps) => {
+const Row = ({ user }: TUser) => {
     const { id, name, username, email } = user
-    const { street, suite, city, zipcode } = user.address
+    const { street, suite, city, zipcode } = user.address.address
     const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
     return (
