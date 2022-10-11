@@ -1,9 +1,5 @@
-export interface ICompany {
+export type TCompany = {
     name: string;
     catchPhrase: string;
     bs: string;
-}
-
-export type TCompany = {
-    company: ICompany
 }

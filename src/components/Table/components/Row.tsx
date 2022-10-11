@@ -4,7 +4,7 @@ import Posts from "./Posts/Posts";
 
 const Row = ({ user }: TUser) => {
     const { id, name, username, email } = user
-    const { street, suite, city, zipcode } = user.address.address
+    const { street, suite, city, zipcode } = user.address
     const address = street + ", " + suite + ", " + city + ", " + zipcode;
 
     return (

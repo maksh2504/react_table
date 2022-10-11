@@ -1,8 +1,4 @@
-export interface IGeo {
+export type TGeo = {
     lat: string
     lng: string
-}
-
-export type TGeo = {
-    geo: IGeo
 }
