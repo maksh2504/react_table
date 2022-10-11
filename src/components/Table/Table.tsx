@@ -19,7 +19,7 @@ const Table = () => {
     // }, [users])
 
     return (
-        <div className="tableContent">
+        <div>
             <Header/>
             {users.map(user => <Row
                 key={user.id}

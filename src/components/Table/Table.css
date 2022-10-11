@@ -1,5 +1,6 @@
 .tableHead, .row {
     display: flex;
+    justify-content: center;
     flex: 1;
     margin-block: 0px;
     width: 100%;
@@ -42,6 +43,11 @@ body {
     hyphens: auto;
 }
 
-.tableContent {
+/*.tableContent {*/
+/*    width: 80%;*/
+/*}*/
+
+.headerContent, .rowContent {
+    display: flex;
     width: 80%;
 }
