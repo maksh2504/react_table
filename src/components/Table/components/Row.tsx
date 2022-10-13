@@ -1,6 +1,6 @@
 import React from 'react';
 import { TUser } from "../../../types/user/user";
-import Posts from "./Posts/Posts";
+import PostsList from "./Posts/PostsList";
 
 const Row = ({ user }: TUser) => {
     const { id, name, username, email } = user
@@ -14,7 +14,7 @@ const Row = ({ user }: TUser) => {
                 <div className="userName">{username}</div>
                 <div className="email">{email}</div>
                 <div className="address">{address}</div>
-                <Posts userId={id}/>
+                <PostsList userId={id}/>
             </div>
         </div>
     );
