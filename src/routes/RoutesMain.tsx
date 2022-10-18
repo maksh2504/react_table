@@ -1,15 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import Home from "../pages/Home";
-import TablePage from "../pages/TablePage";
-import Post from "../pages/Post";
+import HomePage from "../pages/Home/HomePage";
+import TablePage from "../pages/Table/TablePage";
+import PostPage from "../pages/Post/PostPage";
 
 const RoutesMain = () => {
     return (
         <Routes>
-            <Route path='/' element={<Home/>}></Route>
-            <Route path='/table' element={<TablePage/>}></Route>
-            <Route path={`/post/:postId`}  element={<Post/>}></Route>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/table' element={<TablePage/>}/>
+            <Route path={`/post/:postId`}  element={<PostPage/>}/>
         </Routes>
     );
 };
