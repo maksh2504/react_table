@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './HomePage.css'
 import {UseTypedSelector} from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
+import {newNameAction} from "../../store/actionsCreator/nameReducer";
+import {NameAction} from "../../store/types/nameReducer";
 
 const HomePage = () => {
     const [name, setName] = useState('')
@@ -9,7 +11,7 @@ const HomePage = () => {
     const dispatch = useDispatch()
 
     const changeStateName = () => {
-        dispatch({type: 'NEW_NAME', payload: name});
+        dispatch(newNameAction(name));
         setName('');
     }
 

@@ -3,7 +3,7 @@ export interface INameState {
 }
 
 export enum NameActionTypes {
-    NEW_NAME = 'NEW_NAME',
+    NEW_NAME = 'nameReducer/NEW_NAME',
 }
 
 interface NewNameAction {
