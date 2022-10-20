@@ -1,13 +1,28 @@
 header {
     display: flex;
     background-color: black;
-    text-align: center;
     justify-content: center;
 }
 
-.link {
+.content {
+    display: flex;
+    width: 80%;
+    text-align: justify;
+}
+
+.headerMenu {
+    display: flex;
+}
+
+.link, .mainName {
     font-size: 32px;
-    color: #FFFFFF;
+    color: white;
     margin: 20px;
     text-decoration: none;
 }
+
+.mainName {
+    margin-left: auto;
+}
+
+
