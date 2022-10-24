@@ -5,15 +5,19 @@ import Row from "./components/Row";
 import {getUsers} from "../../featchers/user";
 import './Table.css';
 import Loader from "../Loader/Loader";
+import {useDispatch} from "react-redux";
+import {getUsersAction} from "../../store/actions/usersAction";
+import {useAppSelector} from "../../hooks/useAppSelector";
 
 const Table = () => {
-    const [users, setUsers] = useState([] as IUser[])
-    const [loading, setLoading] = useState(true)
+
+    const {users, loading, error} = useAppSelector(state => state.getUsers)
+    const dispatch = useDispatch()
+
 
     useEffect( () => {
-        getUsers().then(
-            users => setUsers(users)
-        ).finally(() => setLoading(false))
+        dispatch(getUsersAction())
+        console.log(users)
     }, [])
 
     return (

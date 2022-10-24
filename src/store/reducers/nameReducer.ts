@@ -1,14 +1,12 @@
-import {INameState, NameAction, NameActionTypes} from "../types/nameReducer"
+import {NameAction, NameActionTypes} from "../types/nameReducer"
 
-const initialState: INameState = {
-    name: ''
-}
+const initialState = ''
 
-export const nameReducer = (state = initialState, action: NameAction) : INameState => {
+export const nameReducer = (state = initialState, action: NameAction) => {
     console.log(action.payload)
     switch (action.type) {
         case NameActionTypes.NEW_NAME:
-            return {name: action.payload}
+            return action.payload
         default:
             return state
     }
