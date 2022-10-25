@@ -2,12 +2,12 @@ import {IUser} from "../../types/user/user";
 
 export interface IUsersState {
     users: IUser[];
-    loading: boolean,
+    usersLoading: boolean,
     error: null | string,
 }
 
 export enum UsersActionTypes {
-    GET_USERS = 'usersReducer/NEW_NAME',
+    GET_USERS = 'usersReducer/GET_USERS',
     GET_USERS_SUCCESS = 'usersReducer/GET_USERS_SUCCESS',
     GET_USERS_ERROR = 'usersReducer/GET_USERS_ERROR',
 }

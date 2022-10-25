@@ -2,19 +2,18 @@ import {IUsersState, UsersAction, UsersActionTypes} from "../types/usersReducer"
 
 const initialState : IUsersState = {
     users: [],
-    loading: false,
+    usersLoading: false,
     error: null,
 }
 
 export const usersReducer = (state = initialState, action: UsersAction) : IUsersState => {
     switch (action.type) {
         case UsersActionTypes.GET_USERS:
-            return {users: [], loading: true, error: null}
+            return {users: [], usersLoading: true, error: null}
         case UsersActionTypes.GET_USERS_SUCCESS:
-            console.log(action.payload)
-            return {users: action.payload, loading: false, error: null}
+            return {users: action.payload, usersLoading: false, error: null}
         case UsersActionTypes.GET_USERS_ERROR:
-            return {users: [], loading: false, error: 'ERROR'}
+            return {users: [], usersLoading: false, error: 'ERROR'}
         default:
             return state
     }
