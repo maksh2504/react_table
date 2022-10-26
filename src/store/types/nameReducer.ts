@@ -1,9 +1,5 @@
-export interface INameState {
-    name: string;
-}
-
 export enum NameActionTypes {
-    NEW_NAME = 'NEW_NAME',
+    NEW_NAME = 'nameReducer/NEW_NAME',
 }
 
 interface NewNameAction {

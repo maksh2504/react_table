@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.css'
-import {useSelector} from "react-redux";
-import {UseTypedSelector} from "../../hooks/useTypedSelector";
+import {useAppSelector} from "../../hooks/useAppSelector";
 
 const Header = () => {
-    const {name} = UseTypedSelector(state => state.userName)
+    const name = useAppSelector(state => state.userName)
 
     return (
         <header>

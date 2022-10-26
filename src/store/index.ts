@@ -1,8 +1,14 @@
-import {applyMiddleware, legacy_createStore as createStore} from "redux";
-import thunk from "redux-thunk";
 import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from "./reducers";
 
-export const store = createStore(rootReducer, applyMiddleware(thunk))
 
-// export const store = configureStore(rootReducer, applyMiddleware(thunk))
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: getDefaultMiddleware => getDefaultMiddleware({
+        immutableCheck: false,
+        serializableCheck: false,
+        thunk: true,
+    })
+})
+
+export type RootState = ReturnType<typeof store.getState>

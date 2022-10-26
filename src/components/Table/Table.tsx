@@ -1,25 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import {IUser} from "../../types/user/user";
+import React, {useEffect} from 'react';
 import Header from "./components/Header";
 import Row from "./components/Row";
-import {getUsers} from "../../featchers/user";
 import './Table.css';
 import Loader from "../Loader/Loader";
+import {getUsersAction} from "../../store/actions/usersAction";
+import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
+import {getPostsAction} from "../../store/actions/postsAction";
 
 const Table = () => {
-    const [users, setUsers] = useState([] as IUser[])
-    const [loading, setLoading] = useState(true)
+
+    const {users, usersLoading} = useAppSelector(state => state.getUsers)
+    const {postsLoading} = useAppSelector(state => state.getPosts)
+    const dispatch = useAppDispatch()
+
 
     useEffect( () => {
-        getUsers().then(
-            users => setUsers(users)
-        ).finally(() => setLoading(false))
+        dispatch(getUsersAction())
+        dispatch(getPostsAction())
     }, [])
 
     return (
         <div>
             {
-                loading ? (
+                usersLoading && postsLoading ? (
                     <Loader/>
                 ) : (
                     <div>

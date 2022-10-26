@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import './HomePage.css'
-import {UseTypedSelector} from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
+import {newNameAction} from "../../store/actions/nameAction";
 
 const HomePage = () => {
     const [name, setName] = useState('')
-    const store = UseTypedSelector(state => state.userName)
     const dispatch = useDispatch()
 
     const changeStateName = () => {
-        dispatch({type: 'NEW_NAME', payload: name});
+        dispatch(newNameAction(name));
         setName('');
     }
 
