@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './HomePage.css'
 import {useDispatch} from "react-redux";
-import {newNameAction} from "../../store/actions/nameAction";
 import {nameSlice} from "../../store/slices/nameSlice";
 
 const HomePage = () => {
