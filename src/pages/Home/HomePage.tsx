@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import './HomePage.css'
 import {useDispatch} from "react-redux";
 import {newNameAction} from "../../store/actions/nameAction";
+import {nameSlice} from "../../store/slices/nameSlice";
 
 const HomePage = () => {
     const [name, setName] = useState('')
     const dispatch = useDispatch()
 
     const changeStateName = () => {
-        dispatch(newNameAction(name));
+        dispatch(nameSlice.actions.addNewNameReducer(name))
+        // dispatch(newNameAction(name));
         setName('');
     }
 

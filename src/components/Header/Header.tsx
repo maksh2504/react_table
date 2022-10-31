@@ -4,7 +4,7 @@ import './Header.css'
 import {useAppSelector} from "../../hooks/useAppSelector";
 
 const Header = () => {
-    const name = useAppSelector(state => state.userName)
+    const {name} = useAppSelector(state => state.name)
 
     return (
         <header>

@@ -7,7 +7,7 @@ type TProps = {
 }
 
 const PostsList = ({userId}: TProps) => {
-    const {posts} = useAppSelector(state => state.getPosts)
+    const {posts} = useAppSelector(state => state.posts)
 
     return (
         <div className='posts'>

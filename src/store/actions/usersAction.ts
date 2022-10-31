@@ -1,15 +1,17 @@
 import {Dispatch} from "redux";
-import {UsersAction, UsersActionTypes} from "../types/usersReducer";
-import {getUsers} from "../../featchers/user";
+import {getUsersFetch} from "../../featchers/user";
+import {usersSlice} from "../slices/usersSlice";
 
 export const getUsersAction = () => {
-    return async (dispatch: Dispatch<UsersAction>) => {
+    const {getUsers, getUsersSuccess, getUsersError} = usersSlice.actions
+    return async (dispatch: Dispatch) => {
         try {
-            dispatch({type: UsersActionTypes.GET_USERS})
-            const users = await getUsers()
-            dispatch({type: UsersActionTypes.GET_USERS_SUCCESS, payload: users})
+            dispatch(getUsers())
+            const users = await getUsersFetch()
+            console.log(users)
+            dispatch(getUsersSuccess(users))
         } catch (e) {
-            dispatch({type: UsersActionTypes.GET_USERS_ERROR, payload: 'ERROR'})
+            dispatch(getUsersError('ERROR'))
         }
     }
 }
