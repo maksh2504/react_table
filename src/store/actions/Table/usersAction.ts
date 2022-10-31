@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
-import {getUsersFetch} from "../../featchers/user";
-import {usersSlice} from "../slices/usersSlice";
+import {getUsersFetch} from "../../../featchers/user";
+import {usersSlice} from "../../slices/Table/usersSlice";
 
 export const getUsersAction = () => {
     const {getUsers, getUsersSuccess, getUsersError} = usersSlice.actions
@@ -8,7 +8,6 @@ export const getUsersAction = () => {
         try {
             dispatch(getUsers())
             const users = await getUsersFetch()
-            console.log(users)
             dispatch(getUsersSuccess(users))
         } catch (e) {
             dispatch(getUsersError('ERROR'))

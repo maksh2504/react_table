@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IUsersState} from "../types/usersReducer";
+import {IUsersState} from "../../types/Table/usersReducer";
 
 const initialState : IUsersState = {
     users: [],

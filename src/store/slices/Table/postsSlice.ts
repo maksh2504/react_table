@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IPostsState} from "../types/postsReducer";
+import {IPostsState} from "../../types/Table/postsReducer";
 
 const initialState : IPostsState = {
     posts: [],

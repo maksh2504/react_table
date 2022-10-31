@@ -1,35 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {IPosts} from "../../../../types/posts";
-import {getPost} from "../../../../featchers/post";
+import React from 'react';
 import './Post.css'
-import Loader from "../../../Loader/Loader";
+import {useAppSelector} from "../../../../hooks/useAppSelector";
 
-type TProps = {
-    postId: number;
-}
-
-const Post = ({postId}: TProps) => {
-    const [post, setPost] = useState({} as IPosts)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        getPost(postId).then(
-            post => setPost(post)
-        ).finally(() => setLoading(false))
-    }, [])
+const Post = () => {
+    const {singlePost} = useAppSelector(state => state.singlePost)
 
     return (
-        <div>
-            {
-                loading ? (
-                    <Loader/>
-                ) : (
-                    <div className='postContent'>
-                        <div className='postTitle'>{post.title}</div>
-                        <div className='postBody'>{post.body}</div>
-                    </div>
-                )
-            }
+        <div className='postContent'>
+            <div className='postTitle'>{singlePost.title}</div>
+            <div className='postBody'>{singlePost.body}</div>
         </div>
     );
 };
