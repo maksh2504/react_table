@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import Row from "./components/Row";
 import './Table.css';
 import Loader from "../Loader/Loader";
-import {getUsersAction} from "../../store/actions/usersAction";
+import {getUsersAction} from "../../store/actions/Table/usersAction";
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
-import {getPostsAction} from "../../store/actions/postsAction";
+import {getPostsAction} from "../../store/actions/Table/postsAction";
 
 const Table = () => {
     const {postsLoading} = useAppSelector(state => state.posts)

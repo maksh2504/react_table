@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
-import {getPostsFetch} from "../../featchers/post";
-import {postsSlice} from "../slices/postsSlice";
+import {getPostsFetch} from "../../../featchers/post";
+import {postsSlice} from "../../slices/Table/postsSlice";
 
 export const getPostsAction = () => {
     const {getPosts, getPostsSuccess, getPostsError} = postsSlice.actions
