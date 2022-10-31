@@ -1,15 +1,18 @@
 import {Dispatch} from "redux";
-import {PostsAction, PostsActionTypes} from "../types/postsReducer";
-import {getPosts} from "../../featchers/post";
+import {getPostsFetch} from "../../featchers/post";
+import {postsSlice} from "../slices/postsSlice";
 
 export const getPostsAction = () => {
-    return async (dispatch: Dispatch<PostsAction>) => {
+    const {getPosts, getPostsSuccess, getPostsError} = postsSlice.actions
+
+
+    return async (dispatch: Dispatch) => {
         try {
-            dispatch({type: PostsActionTypes.GET_POSTS})
-            const posts = await getPosts()
-            dispatch({type: PostsActionTypes.GET_POSTS_SUCCESS, payload: posts})
+            dispatch(getPosts())
+            const posts = await getPostsFetch()
+            dispatch(getPostsSuccess(posts))
         } catch (e) {
-            dispatch({type: PostsActionTypes.GET_POSTS_ERROR, payload: 'ERROR'})
+            dispatch(getPostsError('ERROR'))
         }
     }
 }

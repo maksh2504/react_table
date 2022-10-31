@@ -13,3 +13,7 @@ interface DefaultAction {
 }
 
 export type NameAction = NewNameAction | DefaultAction
+
+export interface INameState {
+    name: string;
+}

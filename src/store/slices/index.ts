@@ -1,14 +1,15 @@
 import {combineReducers} from "redux";
-import {nameReducer} from "./nameReducer";
-import {usersReducer} from "./usersReducer";
 import {store} from "../index";
-import {postsReducer} from "./postsReducer";
+import {nameSlice} from "./nameSlice";
+import {usersSlice} from "./usersSlice";
+import {postsSlice} from "./postsSlice";
 
 
 export const rootReducer = combineReducers({
-    userName: nameReducer,
-    getUsers: usersReducer,
-    getPosts: postsReducer,
+    name: nameSlice.reducer,
+    users: usersSlice.reducer,
+    posts: postsSlice.reducer,
+
 })
 
 export type RootState = ReturnType<typeof rootReducer>

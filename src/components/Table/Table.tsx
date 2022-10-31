@@ -8,11 +8,10 @@ import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
 import {getPostsAction} from "../../store/actions/postsAction";
 
 const Table = () => {
+    const {postsLoading} = useAppSelector(state => state.posts)
+    const {users, usersLoading} = useAppSelector(state => state.users)
 
-    const {users, usersLoading} = useAppSelector(state => state.getUsers)
-    const {postsLoading} = useAppSelector(state => state.getPosts)
     const dispatch = useAppDispatch()
-
 
     useEffect( () => {
         dispatch(getUsersAction())
