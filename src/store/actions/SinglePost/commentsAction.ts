@@ -1,6 +1,4 @@
 import {Dispatch} from "redux";
-import {getUsersFetch} from "../../../featchers/user";
-import {usersSlice} from "../../slices/Table/usersSlice";
 import {commentsSlice} from "../../slices/SinglePost/commentsSlice";
 import {getCommentsFetch} from "../../../featchers/post";
 

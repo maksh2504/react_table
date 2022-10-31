@@ -7,10 +7,10 @@ import {nameSlice} from "../../store/slices/nameSlice";
 const HomePage = () => {
     const [name, setName] = useState('')
     const dispatch = useDispatch()
+    const {newName} = nameSlice.actions
 
     const changeStateName = () => {
-        dispatch(nameSlice.actions.addNewNameReducer(name))
-        // dispatch(newNameAction(name));
+        dispatch(newName(name))
         setName('');
     }
 

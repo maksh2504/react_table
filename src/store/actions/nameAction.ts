@@ -1,5 +1,10 @@
-import { NameActionTypes} from "../types/nameReducer";
+import {Dispatch} from "redux";
+import {nameSlice} from "../slices/nameSlice";
 
-export const newNameAction = (payload: string) => {
-     return {type: NameActionTypes.NEW_NAME, payload: payload}
+export const newNameAction = (name: string) => {
+     const {newName} = nameSlice.actions
+     return 0
+     // return async (dispatch: Dispatch) => {
+     //      dispatch(newName(name))
+     // }
 }
