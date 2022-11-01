@@ -14,13 +14,13 @@ const Table = () => {
 
     const dispatch = useAppDispatch()
 
-    const {startLoadingPaymentInfo, stopLoadingPaymentInfo} = tableActions.isLoadingActions
+    const {startLoadingInfo, stopLoadingInfo} = tableActions.isLoadingActions
 
     useEffect( () => {
-        dispatch(startLoadingPaymentInfo())
+        dispatch(startLoadingInfo())
         dispatch(getUsersAction())
         dispatch(getPostsAction())
-        dispatch(stopLoadingPaymentInfo())
+        dispatch(stopLoadingInfo())
     }, [])
 
     return (

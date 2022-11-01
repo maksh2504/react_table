@@ -4,29 +4,32 @@ import Post from "./components/Post/Post";
 import CommentsList from "./components/Comments/CommentsList";
 import './SinglePost.css'
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
-import {getSinglePostsAction} from "../../store/actions/SinglePost/singlePostAction";
+import {getSinglePostsAction, getCommentsAction} from "../../store/actions/singlePost";
 import Loader from "../Loader/Loader";
-import {getCommentsAction} from "../../store/actions/SinglePost/commentsAction";
+import {getSinglePost} from "../../store/selectors/getSinglePost";
+import {singlePostActions} from "../../store/slices/singlePostSlice";
 
 type TProps = {
     postId: number;
 }
 
 const SinglePost = ({postId}: TProps) => {
-    const {singlePostLoading} = useAppSelector(state => state.singlePost)
-    const {commentsLoading} = useAppSelector(state => state.comments)
+    const {isLoading} = useAppSelector(getSinglePost)
+    const {startLoadingInfo, stopLoadingInfo} = singlePostActions.isLoadingActions
 
     const dispatch = useAppDispatch()
 
     useEffect( () => {
+        dispatch(startLoadingInfo())
         dispatch(getSinglePostsAction(postId))
         dispatch(getCommentsAction(postId))
+        dispatch(stopLoadingInfo())
     }, [])
 
-    return (
+   return (
         <>
             {
-                singlePostLoading && commentsLoading ? (
+                isLoading ? (
                     <Loader/>
                 ) : (
                     <div className='singlePost'>
