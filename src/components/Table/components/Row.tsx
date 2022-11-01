@@ -14,7 +14,7 @@ const Row = ({ user }: TUser) => {
                 <div className="userName">{username}</div>
                 <div className="email">{email}</div>
                 <div className="address">{address}</div>
-                <PostsList userId={id}/>
+                <PostsList key={id} userId={id}/>
             </div>
         </div>
     );
