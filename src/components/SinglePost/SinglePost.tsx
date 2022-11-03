@@ -4,17 +4,16 @@ import Post from "./components/Post/Post";
 import CommentsList from "./components/Comments/CommentsList";
 import './SinglePost.css'
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
-import {getSinglePostsAction} from "../../store/actions/SinglePost/singlePostAction";
+import {getSinglePostsAction, getCommentsAction} from "../../store/actions/singlePost";
 import Loader from "../Loader/Loader";
-import {getCommentsAction} from "../../store/actions/SinglePost/commentsAction";
+import {getSinglePost} from "../../store/selectors/getSinglePost";
 
 type TProps = {
     postId: number;
 }
 
 const SinglePost = ({postId}: TProps) => {
-    const {singlePostLoading} = useAppSelector(state => state.singlePost)
-    const {commentsLoading} = useAppSelector(state => state.comments)
+    const {isLoadingPost, isLoadingComments} = useAppSelector(getSinglePost)
 
     const dispatch = useAppDispatch()
 
@@ -23,10 +22,10 @@ const SinglePost = ({postId}: TProps) => {
         dispatch(getCommentsAction(postId))
     }, [])
 
-    return (
+   return (
         <>
             {
-                singlePostLoading && commentsLoading ? (
+                isLoadingPost || isLoadingComments ? (
                     <Loader/>
                 ) : (
                     <div className='singlePost'>

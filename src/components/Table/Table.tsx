@@ -3,13 +3,13 @@ import Header from "./components/Header";
 import Row from "./components/Row";
 import './Table.css';
 import Loader from "../Loader/Loader";
-import {getUsersAction} from "../../store/actions/Table/usersAction";
+import {getUsersAction, getPostsAction} from "../../store/actions/table";
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
-import {getPostsAction} from "../../store/actions/Table/postsAction";
+import {getTable, getUsers} from "../../store/selectors/getTable";
 
 const Table = () => {
-    const {postsLoading} = useAppSelector(state => state.posts)
-    const {users, usersLoading} = useAppSelector(state => state.users)
+    const { users } = useAppSelector(getUsers)
+    const { isLoadingPosts, isLoadingUsers } = useAppSelector(getTable)
 
     const dispatch = useAppDispatch()
 
@@ -21,12 +21,12 @@ const Table = () => {
     return (
         <div>
             {
-                usersLoading && postsLoading ? (
+                isLoadingUsers || isLoadingPosts ? (
                     <Loader/>
                 ) : (
                     <div>
                         <Header/>
-                        {users.map(user => <Row
+                        {users?.map(user => <Row
                             key={user.id}
                             user={user} />)}
                     </div>
