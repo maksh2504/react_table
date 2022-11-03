@@ -14,22 +14,20 @@ type TProps = {
 }
 
 const SinglePost = ({postId}: TProps) => {
-    const {isLoading} = useAppSelector(getSinglePost)
-    const {startLoadingInfo, stopLoadingInfo} = singlePostActions.isLoadingActions
+    const {isLoadingPost, isLoadingComments} = useAppSelector(getSinglePost)
+    // const {startLoadingInfo, stopLoadingInfo} = singlePostActions.isLoadingActions
 
     const dispatch = useAppDispatch()
 
     useEffect( () => {
-        dispatch(startLoadingInfo())
         dispatch(getSinglePostsAction(postId))
         dispatch(getCommentsAction(postId))
-        dispatch(stopLoadingInfo())
     }, [])
 
    return (
         <>
             {
-                isLoading ? (
+                isLoadingPost || isLoadingComments ? (
                     <Loader/>
                 ) : (
                     <div className='singlePost'>
