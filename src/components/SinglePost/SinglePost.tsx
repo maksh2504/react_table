@@ -7,7 +7,6 @@ import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
 import {getSinglePostsAction, getCommentsAction} from "../../store/actions/singlePost";
 import Loader from "../Loader/Loader";
 import {getSinglePost} from "../../store/selectors/getSinglePost";
-import {singlePostActions} from "../../store/slices/singlePostSlice";
 
 type TProps = {
     postId: number;
@@ -15,7 +14,6 @@ type TProps = {
 
 const SinglePost = ({postId}: TProps) => {
     const {isLoadingPost, isLoadingComments} = useAppSelector(getSinglePost)
-    // const {startLoadingInfo, stopLoadingInfo} = singlePostActions.isLoadingActions
 
     const dispatch = useAppDispatch()
 
