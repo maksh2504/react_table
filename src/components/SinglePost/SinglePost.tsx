@@ -6,14 +6,14 @@ import './SinglePost.css'
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
 import {getSinglePostsAction, getCommentsAction} from "../../store/actions/singlePost";
 import Loader from "../Loader/Loader";
-import {getSinglePost} from "../../store/selectors/getSinglePost";
+import {singlePost} from "../../store/selectors/singlePost";
 
 type TProps = {
     postId: number;
 }
 
 const SinglePost = ({postId}: TProps) => {
-    const {isLoadingPost, isLoadingComments} = useAppSelector(getSinglePost)
+    const {isLoadingPost, isLoadingComments} = useAppSelector(singlePost)
 
     const dispatch = useAppDispatch()
 

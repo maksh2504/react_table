@@ -1,7 +1,7 @@
 import React from 'react';
 import './Post.css'
 import {useAppSelector} from "../../../../hooks/useAppSelector";
-import {getPost} from "../../../../store/selectors/getSinglePost";
+import {getPost} from "../../../../store/selectors/singlePost";
 
 const Post = () => {
     const {singlePost} = useAppSelector(getPost)

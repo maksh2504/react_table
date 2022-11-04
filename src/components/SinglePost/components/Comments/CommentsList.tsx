@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from "./Comment";
 import './CommentsList.css'
 import {useAppSelector} from "../../../../hooks/useAppSelector";
-import {getComments} from "../../../../store/selectors/getSinglePost";
+import {getComments} from "../../../../store/selectors/singlePost";
 
 
 const CommentsList = () => {

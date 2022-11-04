@@ -2,10 +2,6 @@ import {combineReducers, createSlice} from "@reduxjs/toolkit";
 import {ISinglePostState} from "../types/SinglePost/singlePostSlice";
 import {IPosts} from "../../types/posts";
 import {ICommentsState} from "../types/SinglePost/commentsSlice";
-import {
-    isLoading,
-    isLoadingActions,
-} from "./isLoading";
 
 export const { reducer: isLoadingPost, actions: isLoadingPostActions } = createSlice({
     name: 'singlePost/isLoadingPost',
@@ -60,4 +56,3 @@ export const {reducer: comments, actions: commentsActions} = createSlice({
 })
 
 export const singlePost = combineReducers({ isLoadingPost, post, isLoadingComments, comments })
-export const singlePostActions = { isLoadingPostActions, postActions, isLoadingCommentsActions, commentsActions }

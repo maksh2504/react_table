@@ -1,11 +1,16 @@
 import {Dispatch} from "redux";
 import {getCommentsFetch, getPostFetch} from "../../featchers/post";
-import {singlePostActions} from "../slices/singlePostSlice";
+import {
+    commentsActions,
+    isLoadingCommentsActions,
+    isLoadingPostActions,
+    postActions
+} from "../slices/singlePost";
 
 
 export const getSinglePostsAction = (postId: number) => {
-    const { getSinglePostSuccess, getSinglePostError } = singlePostActions.postActions
-    const { startLoadingInfo, stopLoadingInfo } = singlePostActions.isLoadingPostActions
+    const { getSinglePostSuccess, getSinglePostError } = postActions
+    const { startLoadingInfo, stopLoadingInfo } = isLoadingPostActions
 
     return async (dispatch: Dispatch) => {
         try {
@@ -20,8 +25,8 @@ export const getSinglePostsAction = (postId: number) => {
 }
 
 export const getCommentsAction = (postId: number) => {
-    const { getCommentsSuccess, getCommentsError } = singlePostActions.commentsActions
-    const { startLoadingInfo, stopLoadingInfo } = singlePostActions.isLoadingCommentsActions
+    const { getCommentsSuccess, getCommentsError } = commentsActions
+    const { startLoadingInfo, stopLoadingInfo } = isLoadingCommentsActions
 
     return async (dispatch: Dispatch) => {
         try {
