@@ -1,10 +1,6 @@
 import {combineReducers, createSlice} from "@reduxjs/toolkit";
 import {IUsersState} from "../types/Table/usersReducer";
 import {IPostsState} from "../types/Table/postsReducer";
-import {
-    isLoading,
-    isLoadingActions,
-} from "./isLoading";
 
 export const { reducer: isLoadingUsers, actions: isLoadingUsersActions } = createSlice({
     name: 'table/isLoadingUsers',
@@ -60,5 +56,3 @@ export const { reducer: posts, actions: postsActions } = createSlice({
 
 
 export const table = combineReducers({ isLoadingUsers, users, isLoadingPosts, posts })
-export const tableActions = { isLoadingUsersActions, usersActions, isLoadingPostsActions, postsActions }
-

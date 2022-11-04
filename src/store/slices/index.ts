@@ -1,14 +1,12 @@
 import {combineReducers} from "redux";
 import {store} from "../index";
-import {nameSlice} from "./nameSlice";
-import {table} from "./tableSlice";
-import {singlePost} from "./singlePostSlice";
-import {isLoading} from "./isLoading";
+import {name} from "./name";
+import {table} from "./table";
+import {singlePost} from "./singlePost";
 
 
 export const rootReducer = combineReducers({
-    isLoading: isLoading,
-    name: nameSlice.reducer,
+    name: name.reducer,
     table: table,
     singlePost: singlePost,
 

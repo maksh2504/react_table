@@ -5,11 +5,11 @@ import './Table.css';
 import Loader from "../Loader/Loader";
 import {getUsersAction, getPostsAction} from "../../store/actions/table";
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
-import {getTable, getUsers} from "../../store/selectors/getTable";
+import {table, getUsers} from "../../store/selectors/table";
 
 const Table = () => {
     const { users } = useAppSelector(getUsers)
-    const { isLoadingPosts, isLoadingUsers } = useAppSelector(getTable)
+    const { isLoadingPosts, isLoadingUsers } = useAppSelector(table)
 
     const dispatch = useAppDispatch()
 

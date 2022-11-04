@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import './HomePage.css'
 import {useDispatch} from "react-redux";
-import {nameSlice} from "../../store/slices/nameSlice";
+import {name} from "../../store/slices/name";
 
 const HomePage = () => {
-    const [name, setName] = useState('')
+    const [localName, setLocalName] = useState('')
     const dispatch = useDispatch()
-    const {newName} = nameSlice.actions
+    const {newName} = name.actions
 
     const changeStateName = () => {
-        dispatch(newName(name))
-        setName('');
+        dispatch(newName(localName))
+        setLocalName('');
     }
 
     return (
@@ -22,7 +22,7 @@ const HomePage = () => {
                 <div>
                     Enter your name.
                 </div>
-                <input type='text' value={name} onChange={e => setName(e.target.value)}/>
+                <input type='text' value={localName} onChange={e => setLocalName(e.target.value)}/>
                 <button onClick={() => {changeStateName()}}>
                     Save
                 </button>

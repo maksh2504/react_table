@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from "./Post";
 import {useAppSelector} from "../../../../hooks/useAppSelector";
-import {getPosts} from "../../../../store/selectors/getTable";
+import {getPosts} from "../../../../store/selectors/table";
 
 type TProps = {
     userId: number;

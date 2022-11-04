@@ -5,7 +5,7 @@ const initialState: INameState = {
     name: '',
 }
 
-export const nameSlice = createSlice({
+export const name = createSlice({
     name: 'name',
     initialState,
     reducers: {

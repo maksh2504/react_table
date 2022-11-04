@@ -1,11 +1,11 @@
 import {Dispatch} from "redux";
 import {getUsersFetch} from "../../featchers/user";
 import {getPostsFetch} from "../../featchers/post";
-import {tableActions} from "../slices/tableSlice";
+import {isLoadingPostsActions, isLoadingUsersActions, postsActions, usersActions} from "../slices/table";
 
 export const getUsersAction = () => {
-    const {getUsersSuccess, getUsersError} = tableActions.usersActions
-    const {startLoadingInfo, stopLoadingInfo} = tableActions.isLoadingUsersActions
+    const {getUsersSuccess, getUsersError} = usersActions
+    const {startLoadingInfo, stopLoadingInfo} = isLoadingUsersActions
 
     return async (dispatch: Dispatch) => {
         try {
@@ -20,8 +20,8 @@ export const getUsersAction = () => {
 }
 
 export const getPostsAction = () => {
-    const {getPostsSuccess, getPostsError} = tableActions.postsActions
-    const {startLoadingInfo, stopLoadingInfo} = tableActions.isLoadingPostsActions
+    const {getPostsSuccess, getPostsError} = postsActions
+    const {startLoadingInfo, stopLoadingInfo} = isLoadingPostsActions
 
 
     return async (dispatch: Dispatch) => {
