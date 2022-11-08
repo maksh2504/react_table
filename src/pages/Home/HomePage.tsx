@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './HomePage.css'
-import {useDispatch} from "react-redux";
-import {name} from "../../store/slices/name";
 import EnterName from "../../components/EnterName";
 
 const HomePage = () => {
