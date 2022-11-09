@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {name} from "../store/slices/name";
+import MyInput from "./UI/MyInput";
+import MyButton from "./UI/MyButton";
 
 const EnterName = () => {
     const [localName, setLocalName] = useState('')
@@ -15,13 +17,10 @@ const EnterName = () => {
     return (
         <div>
             <div className='inputBox'>
-                <div>
-                    Enter your name.
-                </div>
-                <input type='text' value={localName} onChange={e => setLocalName(e.target.value)}/>
-                <button onClick={() => {changeStateName()}}>
+                <MyInput label='Enter your name' type='text' value={localName} onChange={e => setLocalName(e.target.value)}/>
+                <MyButton onClick={() => {changeStateName()}}>
                     Save
-                </button>
+                </MyButton>
             </div>
         </div>
     );
