@@ -5,9 +5,9 @@ interface MyLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
     type?: string;
 }
 
-const MyLabel : FC <MyLabelProps> = ({type, children, ...props}) => {
+const MyLabel : FC <MyLabelProps> = ({type, children}) => {
     return (
-        <label className={type} {...props}>
+        <label className={type}>
             {children}
         </label>
     );

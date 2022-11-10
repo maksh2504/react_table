@@ -5,11 +5,15 @@ interface MyInputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
-const MyInput : FC <MyInputProps> = ({ label, type, value, ...props}) => {
+const MyInput : FC <MyInputProps> = ({
+                                         label,
+                                         type,
+                                         value,
+                                         onChange}) => {
     return (
         <div className='myInputContainer'>
-            <label className='myInputLabel'>{label}</label>
-            <input className='myInput' type={type} value={value} {...props}/>
+            <label className='myInputLabel' style={{fontFamily: 'Arial'}}>{label}</label>
+            <input className='myInput' type={type} value={value} onChange={onChange}/>
         </div>
     );
 };

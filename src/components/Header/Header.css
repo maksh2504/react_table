@@ -14,15 +14,11 @@ header {
     display: flex;
 }
 
-.link, .mainName {
+.link {
     font-size: 32px;
     color: white;
     margin: 20px;
     text-decoration: none;
-}
-
-.mainName {
-    margin-left: auto;
 }
 
 
