@@ -1,0 +1,11 @@
+.inputBox {
+    width: content-box;
+    justify-content: left;
+    border: 1px solid teal;
+    padding: 40px 56px;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: center;
+}

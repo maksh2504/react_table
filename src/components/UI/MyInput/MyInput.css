@@ -1,0 +1,30 @@
+.myInputContainer {
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
+    align-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.myInput {
+    width: 300px;
+    margin: 5px 0px;
+    font-size: 18px;
+    text-align: center;
+    /*color: teal;*/
+    padding: 15px 40px;
+    /*border-color: teal;*/
+    /*border-style: solid;*/
+}
+.myInput:focus {
+    outline: none;
+    border-color: teal;
+    border-style: solid;
+ }
+
+.myInputLabel {
+    font-size: 18px;
+}
+
+
