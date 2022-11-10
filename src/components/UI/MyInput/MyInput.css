@@ -11,8 +11,12 @@
     font-size: 18px;
     text-align: center;
     color: teal;
+    /*border-color: teal;*/
+    /*border-style: solid;*/
 }
 
-
+.myInputLabel {
+    font-size: 18px;
+}
 
 

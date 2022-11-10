@@ -1,8 +1,13 @@
 import React, {FC, LabelHTMLAttributes} from 'react';
+import './MyLabel.css'
 
-const MyLabel : FC <LabelHTMLAttributes<HTMLLabelElement>> = ({children, ...props}) => {
+interface MyLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
+    type?: string;
+}
+
+const MyLabel : FC <MyLabelProps> = ({type, children, ...props}) => {
     return (
-        <label {...props}>
+        <label className={type} {...props}>
             {children}
         </label>
     );

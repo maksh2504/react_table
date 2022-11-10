@@ -8,7 +8,7 @@ interface MyInputProps extends InputHTMLAttributes<HTMLInputElement> {
 const MyInput : FC <MyInputProps> = ({ label, type, value, ...props}) => {
     return (
         <div className='myInputContainer'>
-            <label>{label}</label>
+            <label className='myInputLabel'>{label}</label>
             <input className='myInput' type={type} value={value} {...props}/>
         </div>
     );

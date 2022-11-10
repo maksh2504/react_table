@@ -1,0 +1,13 @@
+.default {
+
+}
+
+.primary {
+    font-size: 20px;
+    color: green;
+}
+
+.secondary {
+    font-size: 30px;
+    color: rebeccapurple;
+}
