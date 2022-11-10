@@ -5,9 +5,9 @@ import './MyButton.css'
 //
 // }
 
-const MyButton: FC <ButtonHTMLAttributes<HTMLButtonElement>>  = ({children, ...props}) => {
+const MyButton: FC <ButtonHTMLAttributes<HTMLButtonElement>>  = ({children, onClick}) => {
     return (
-        <button className='myBtn' {...props}>
+        <button className='myBtn' onClick={onClick}>
             {children}
         </button>
     );
