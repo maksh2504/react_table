@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {name} from "../store/slices/name";
-import MyInput from "./UI/MyInput";
-import MyButton from "./UI/MyButton";
+import MyInput from "./UI/MyInput/MyInput";
+import MyButton from "./UI/MyButton/MyButton";
 
 const EnterName = () => {
     const [localName, setLocalName] = useState('')

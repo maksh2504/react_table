@@ -1,4 +1,5 @@
 import React, {ButtonHTMLAttributes, FC} from 'react';
+import './MyButton.css'
 
 // interface MyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 //
@@ -6,7 +7,7 @@ import React, {ButtonHTMLAttributes, FC} from 'react';
 
 const MyButton: FC <ButtonHTMLAttributes<HTMLButtonElement>>  = ({children, ...props}) => {
     return (
-        <button {...props}>
+        <button className='myBtn' {...props}>
             {children}
         </button>
     );
