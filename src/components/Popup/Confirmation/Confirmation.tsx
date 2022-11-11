@@ -5,13 +5,14 @@ import MyButton from "../../UI/MyButton/MyButton";
 type IProps = {
     setChoice: Dispatch<SetStateAction<boolean>>;
     setActive: Dispatch<SetStateAction<boolean>>;
+    name: string;
 }
 
-const Confirmation = ({setChoice, setActive} : IProps) => {
+const Confirmation = ({setChoice, setActive, name} : IProps) => {
     return (
         <div className='popupContent'>
             <h1>Confirm action</h1>
-            <label>Are you sure you want to do this?</label>
+            <label>Are you sure to set a {name}?</label>
             <div>
                 <MyButton type='primary' onClick={() => {
                     setChoice(true);
