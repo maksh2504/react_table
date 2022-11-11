@@ -1,0 +1,21 @@
+.mainPopupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.mainPopupContainer.active {
+    visibility: visible;
+}
+
+.popupContainer {
+    background-color: white;
+}
+

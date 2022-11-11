@@ -1,8 +1,22 @@
-.myBtn {
+.myBtn, .primary, .secondary {
     padding: 5px 15px;
     color: teal;
     font-size: 18px;
     background: transparent;
     border: 2px solid teal;
     margin: 5px 0px;
+}
+
+.default {
+
+}
+
+.primary {
+    color: white;
+    background: teal;
+    margin: 10px 10px 10px 0px;
+}
+
+.secondary {
+    margin: 10px 10px 10px 0px;
 }

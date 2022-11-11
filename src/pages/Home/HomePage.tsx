@@ -10,9 +10,6 @@ const HomePage = () => {
                 Home page.
             </h1>
             <EnterName/>
-            <MyLabel type='default'>Hello</MyLabel>
-            <MyLabel type='primary'>Hello</MyLabel>
-            <MyLabel type='secondary'>Hello</MyLabel>
         </div>
     );
 };
