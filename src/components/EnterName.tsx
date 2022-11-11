@@ -46,7 +46,7 @@ const EnterName = () => {
                 </div>
             </div>
             <Popup active={activePopup} setActive={setActivePopup}>
-                <Confirmation setChoice={setConfirm} setActive={setActivePopup}/>
+                <Confirmation setChoice={setConfirm} setActive={setActivePopup} name={localName}/>
             </Popup>
         </>
     );
