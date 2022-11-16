@@ -1,21 +1,21 @@
-.default {
+/*.default {*/
 
-}
+/*}*/
 
-.primary {
-    font-size: 20px;
-    color: green;
-}
+/*.primary {*/
+/*    font-size: 20px;*/
+/*    color: green;*/
+/*}*/
 
-.secondary {
-    font-size: 30px;
-    color: rebeccapurple;
-}
+/*.secondary {*/
+/*    font-size: 30px;*/
+/*    color: rebeccapurple;*/
+/*}*/
 
 .head {
     font-size: 32px;
     color: white;
     text-decoration: none;
-    margin: 20px 20px 20px auto;
+    margin: 0px 20px 0px auto;
     padding: 0px;
 }

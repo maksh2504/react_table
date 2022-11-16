@@ -9,19 +9,24 @@ type IProps = {
 }
 
 const Confirmation = ({setChoice, setActive, name} : IProps) => {
+
+    const onOkHandler = () => {
+        setChoice(true);
+        setActive(false);
+    }
+
+    const onCancelHandler = () => {
+        setChoice(false);
+        setActive(false);
+    }
+
     return (
         <div className='popupContent'>
             <h1>Confirm action</h1>
             <label>Are you sure to set a {name}?</label>
             <div>
-                <MyButton type='primary' onClick={() => {
-                    setChoice(true);
-                    setActive(false);
-                }}>Yes</MyButton>
-                <MyButton type='secondary' onClick={() => {
-                    setChoice(false);
-                    setActive(false);
-                }}>No</MyButton>
+                <MyButton type='primary' onClick={() => { onOkHandler() }}>OK</MyButton>
+                <MyButton type='secondary' onClick={() => { onCancelHandler() }}>Cancel</MyButton>
             </div>
         </div>
     );

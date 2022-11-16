@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from "react-redux";
-import {name} from "../store/slices/name";
-import MyInput from "./UI/MyInput/MyInput";
-import MyButton from "./UI/MyButton/MyButton";
+import {name} from "../../store/slices/name";
+import MyInput from "../UI/MyInput/MyInput";
+import MyButton from "../UI/MyButton/MyButton";
 import './EnterName.css'
-import Popup from "./Popup/Popup";
-import Confirmation from "./Popup/Confirmation/Confirmation";
+import Popup from "../Popup/Popup";
+import Confirmation from "./Confirmation/Confirmation";
 
 const EnterName = () => {
     const [localName, setLocalName] = useState('')
     const dispatch = useDispatch()
     const {newName} = name.actions
 
-    const [activePopup, setActivePopup] = useState(false)
-    const [confirm, setConfirm] = useState(false)
+    const [isActivePopup, setIsActivePopup] = useState(false)
+    const [isConfirm, setIsConfirm] = useState(false)
 
 
     const changeStateName = () => {
@@ -22,13 +22,13 @@ const EnterName = () => {
     }
 
     const areYouSureName = () => {
-        confirm && changeStateName()
+        isConfirm && changeStateName()
     }
 
     useEffect(() => {
         areYouSureName();
-        setConfirm(false);
-    }, [confirm])
+        setIsConfirm(false);
+    }, [isConfirm])
 
     return (
         <>
@@ -40,13 +40,13 @@ const EnterName = () => {
                         value={localName}
                         onChange={e => setLocalName(e.target.value)}
                     />
-                    <MyButton type='myBtn' onClick={() => {setActivePopup(true)}}>
+                    <MyButton type='myBtn' onClick={() => {setIsActivePopup(true)}}>
                         Save
                     </MyButton>
                 </div>
             </div>
-            <Popup active={activePopup} setActive={setActivePopup}>
-                <Confirmation setChoice={setConfirm} setActive={setActivePopup} name={localName}/>
+            <Popup active={isActivePopup} setActive={setIsActivePopup}>
+                <Confirmation setChoice={setIsConfirm} setActive={setIsActivePopup} name={localName}/>
             </Popup>
         </>
     );
