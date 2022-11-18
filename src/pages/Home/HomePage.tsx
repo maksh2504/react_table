@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.css'
-import EnterName from "../../components/EnterName";
+import EnterName from "../../components/EnterName/EnterName";
 import MyLabel from "../../components/UI/MyLabel/MyLabel";
 
 const HomePage = () => {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Table from "../../components/Table/Table";
+import MyTable from "../../components/Table/MyTable";
 
 const TablePage = () => {
     return (
-        <div className='table'>
-            <Table/>
+        <div className='tableContainer'>
+            <MyTable/>
         </div>
     );
 };

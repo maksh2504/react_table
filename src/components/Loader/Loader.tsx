@@ -1,10 +1,12 @@
 import React from 'react';
 import './Loader.css'
+import {Spin} from "antd";
 
 const Loader = () => {
     return (
         <div className='loader'>
-            <h1>LOADING...</h1>
+            <Spin size='large'/>
+            {/*<h1>LOADING...</h1>*/}
         </div>
     );
 };

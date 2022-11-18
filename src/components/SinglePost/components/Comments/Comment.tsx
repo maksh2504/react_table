@@ -1,14 +1,16 @@
 import React from 'react';
 import {TComment} from "../../../../types/comments";
 import './Comment.css'
+import {Card} from "antd";
+import Meta from "antd/es/card/Meta";
 
 const Comment = ({comment}: TComment) => {
     return (
         <div className='comment'>
-            <div className='cName'>{comment.name}</div>
-            {/*<div className='postId'>{comment.postId}</div>*/}
-            <div className='cBody'>{comment.body}</div>
-            <div className='cEmail'>{comment.email}</div>
+            <Card title={comment.name} bordered={false} >
+                <p>{comment.body}</p>
+                <Meta description={comment.email}/>
+            </Card>
         </div>
     );
 };

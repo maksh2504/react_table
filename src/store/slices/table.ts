@@ -55,4 +55,5 @@ export const { reducer: posts, actions: postsActions } = createSlice({
 })
 
 
+
 export const table = combineReducers({ isLoadingUsers, users, isLoadingPosts, posts })
