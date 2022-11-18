@@ -1,19 +1,19 @@
-import React, {useEffect} from 'react';
-import Header from "./components/Header";
-import Row from "./components/Row";
+import React, {FC, useEffect} from 'react';
 import './Table.css';
 import Loader from "../Loader/Loader";
 import {getUsersAction, getPostsAction} from "../../store/actions/table";
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
 import {table, getUsers} from "../../store/selectors/table";
+import {Spin, Table} from 'antd';
+import {columns} from "./columns";
 
-const Table = () => {
-    const { users } = useAppSelector(getUsers)
-    const { isLoadingPosts, isLoadingUsers } = useAppSelector(table)
+const MyTable: FC = () => {
+    const {users} = useAppSelector(getUsers)
+    const {isLoadingPosts, isLoadingUsers} = useAppSelector(table)
 
     const dispatch = useAppDispatch()
 
-    useEffect( () => {
+    useEffect(() => {
         dispatch(getUsersAction())
         dispatch(getPostsAction())
     }, [])
@@ -24,11 +24,8 @@ const Table = () => {
                 isLoadingUsers || isLoadingPosts ? (
                     <Loader/>
                 ) : (
-                    <div>
-                        <Header/>
-                        {users?.map(user => <Row
-                            key={user.id}
-                            user={user} />)}
+                    <div className="tableContainer">
+                        <Table className='tableContent' columns={columns} dataSource={users} pagination={false}/>
                     </div>
                 )
             }
@@ -36,4 +33,4 @@ const Table = () => {
     );
 };
 
-export default Table;
+export default MyTable;

@@ -1,11 +1,11 @@
-.tableHead, .row {
+.tableHead, .tableContainer {
     display: flex;
     justify-content: center;
     flex: 1;
     margin-block: 0px;
     width: 100%;
-    border-bottom-style: solid;
-    padding: 10px 0px;
+    /*border-bottom-style: solid;*/
+    /*padding: 10px 0px;*/
 }
 
 .tableHead {
@@ -24,8 +24,8 @@
 
 .posts, .headerPosts {
     padding-inline-start: 0px;
-    width: 34%;
-    padding-left: 20px;
+    width: 100%;
+    /*padding-left: 20px;*/
 }
 
 ul {
@@ -41,7 +41,7 @@ body {
     hyphens: auto;
 }
 
-.headerContent, .rowContent {
+.headerContent, .tableContent {
     display: flex;
     width: 80%;
 }
