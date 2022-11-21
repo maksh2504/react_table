@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from "react-redux";
 import {name} from "../../store/slices/name";
-import MyInput from "../UI/MyInput/MyInput";
-import MyButton from "../UI/MyButton/MyButton";
 import './EnterName.css'
-import Popup from "../Popup/Popup";
-import Confirmation from "./Confirmation/Confirmation";
-import {Button, Modal, Popconfirm} from "antd";
+import {Button, Input, Modal} from "antd";
+import { UserOutlined } from '@ant-design/icons';
+
 
 const EnterName = () => {
     const [localName, setLocalName] = useState('')
@@ -35,20 +33,25 @@ const EnterName = () => {
         <>
             <div className='inputContainer'>
                 <div className='inputBox'>
-                    <MyInput
-                        label='Enter your name:'
-                        type='text'
+                    <Input
+                        size="large"
+                        prefix={<UserOutlined/>}
+                        placeholder="Enter your name:"
                         value={localName}
                         onChange={e => setLocalName(e.target.value)}
                     />
 
-                    <Popconfirm title={`Are you sure to set a ${localName}?`} onConfirm={() => setIsConfirm(true)}>
-                        <Button type={'default'} size={'large'}>Save</Button>
-                    </Popconfirm>
+                    <Button
+                        type='primary'
+                        size='large'
+                        onClick={() => setIsActivePopup(true)}
+                        disabled={localName ? false : true}
+                    >
+                        Save
+                    </Button>
 
-                    <Button type={'primary'} size={'large'} onClick={() => setIsActivePopup(true)}>Save</Button>
                     <Modal
-                        title={'Confirmation'}
+                        title='Confirmation'
                         open={isActivePopup}
                         onOk={() => (
                             setIsActivePopup(false),

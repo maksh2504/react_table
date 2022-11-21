@@ -4,10 +4,10 @@ import Loader from "../Loader/Loader";
 import {getUsersAction, getPostsAction} from "../../store/actions/table";
 import {useAppDispatch, useAppSelector} from "../../hooks/useAppSelector";
 import {table, getUsers} from "../../store/selectors/table";
-import {Spin, Table} from 'antd';
+import {Table as AntdTable} from 'antd';
 import {columns} from "./columns";
 
-const MyTable: FC = () => {
+const Table: FC = () => {
     const {users} = useAppSelector(getUsers)
     const {isLoadingPosts, isLoadingUsers} = useAppSelector(table)
 
@@ -24,13 +24,11 @@ const MyTable: FC = () => {
                 isLoadingUsers || isLoadingPosts ? (
                     <Loader/>
                 ) : (
-                    <div className="tableContainer">
-                        <Table className='tableContent' columns={columns} dataSource={users} pagination={false}/>
-                    </div>
+                    <AntdTable columns={columns} dataSource={users} pagination={false}/>
                 )
             }
         </div>
     );
 };
 
-export default MyTable;
+export default Table;

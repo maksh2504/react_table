@@ -10,7 +10,7 @@ const CommentsList = () => {
 
     return (
         <div className='commentBlock'>
-            <div>COMMENTS:</div>
+            <div style={{fontSize: '17px'}}>Comments:</div>
             <div className='comments'>
                 {
                     comments?.map(comment => (
