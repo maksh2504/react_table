@@ -1,47 +1,16 @@
-.tableHead, .tableContainer {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    margin-block: 0px;
-    width: 100%;
-    /*border-bottom-style: solid;*/
-    /*padding: 10px 0px;*/
-}
-
-.tableHead {
-    background-color: #393B38;
-}
-
-.headerName, .headerUserName, .headerEmail, .headerAddress, .headerPosts {
-    color: #FFFFFF;
-    font-size: 22px;
-}
-
-.name, .userName, .email, .address, .headerName, .headerUserName, .headerEmail, .headerAddress, .posts, .headerPosts {
-    width: 16.5%;
-    padding: 10px 0px;
-}
-
-.posts, .headerPosts {
-    padding-inline-start: 0px;
-    width: 100%;
-    /*padding-left: 20px;*/
-}
-
-ul {
-    padding-left: 20px;
-    margin: 0px;
+* {
+    hyphens: auto;
 }
 
 body {
     margin: 0px;
 }
 
-* {
-    hyphens: auto;
+.ant-table-row {
+    vertical-align: top;
 }
 
-.headerContent, .tableContent {
-    display: flex;
-    width: 80%;
+ul {
+    padding-left: 20px;
+    margin: 0px;
 }

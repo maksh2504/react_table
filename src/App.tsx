@@ -1,25 +1,21 @@
 import React from 'react';
-// import Header from './components/Header/Header';
 import RoutesMain from "./routes/RoutesMain";
 import {Layout} from "antd";
-import {Content, Footer, Header} from "antd/es/layout/layout";
-import MyHeader from "./components/Header/MyHeader";
+import {Content, Footer} from "antd/es/layout/layout";
+import Header from "./components/Header/Header";
+import './App.css'
 
 function App() {
   return (
       <Layout>
-          <MyHeader/>
+          <Header/>
           <Content>
               <RoutesMain/>
           </Content>
+          <Footer style={{textAlign: 'center'}}>
+              © 2022 Foundevs Study
+          </Footer>
       </Layout>
-
-      // <div>
-      //
-      //
-      //     {/*<Header/>*/}
-      //     {/*<RoutesMain/>*/}
-      // </div>
   );
 }
 
