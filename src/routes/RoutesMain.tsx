@@ -7,7 +7,7 @@ import PostPage from "../pages/Post/PostPage";
 const RoutesMain = () => {
     return (
         <Routes>
-            <Route path='/' element={ <Navigate to="/home" /> }/>
+            <Route path='/' element={ <Navigate to="/home"/> }/>
             <Route path='/home' element={<HomePage/>}/>
             <Route path='/table' element={<TablePage/>}/>
             <Route path={`/post/:postId`}  element={<PostPage/>}/>
